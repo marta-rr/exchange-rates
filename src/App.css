@@ -1,15 +1,39 @@
 body{
   margin:0;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  min-height:100vh;
-  text-align: center;
+  overflow: hidden;
+}
+
+#currency-converter{
+    justify-content:center;
+    align-items: center;
+    min-height:100vh;
+    text-align: center;
+}
+
+.nav-bar{
+  background-color:black;
+  padding-left: 1rem;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30px;
+    margin-left: 1rem;
+
+}
+
+.footer-social-network{
+  float:right;
+  margin-right: 1rem;
 }
 
 h1{
   margin:0;
-  margin-bottom: .5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .input{

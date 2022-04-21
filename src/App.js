@@ -40,7 +40,7 @@ function App() {
 
   //Be able to change currency from the list and get rate
   useEffect(() => {
-    if (fromCurrency != undefined && toCurrency != undefined){
+    if (fromCurrency !== undefined && toCurrency !== undefined){
       fetch(`${API_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
       .then(res => res.json())
       .then(data => {
@@ -64,20 +64,44 @@ function App() {
   //Display on DOM
   return (
       <>
+      <header>
+        <div class= "nav-bar">
+          <nav class="navbar navbar-expand-md navbar-dark bg-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Currency converter</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Exchange rates</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div id= "currency-converter">
         <h1>Currency converter</h1>
         <CurrencyRow currencyOptions = {currencyOptions}
-        selectedCurrency = {fromCurrency}
-        onChangeCurrency = {e => setFromCurrency(e.target.value)}
-        onChangeAmount = {handleFromAmountChange}
-        amount = {fromAmount}
+          selectedCurrency = {fromCurrency}
+          onChangeCurrency = {e => setFromCurrency(e.target.value)}
+          onChangeAmount = {handleFromAmountChange}
+          amount = {fromAmount}
         />
         <div className = "equals">=</div>
         <CurrencyRow currencyOptions = {currencyOptions}
-        selectedCurrency = {toCurrency}
-        onChangeCurrency = {e => setToCurrency(e.target.value)}
-        onChangeAmount = {handleToAmountChange}
-        amount = {toAmount}
+          selectedCurrency = {toCurrency}
+          onChangeCurrency = {e => setToCurrency(e.target.value)}
+          onChangeAmount = {handleToAmountChange}
+          amount = {toAmount}
         />
+      </div>
+      <footer>
+        <p>© 2022 Copyright Marta Ríos. All Rights Reserved. <span class= "footer-social-network">Github</span></p>
+      </footer>
       </>
   );
 }
