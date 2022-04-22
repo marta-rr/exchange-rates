@@ -1,9 +1,10 @@
 import React from "react"
-// import "./Style.css"
-// import { link } from 'react-router-dom'
+import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import './App.css'
 
 class NavBar extends React.Component {
     render() { return (
+    <Router>
       <header>
         <div class= "nav-bar">
           <nav class="navbar navbar-expand-md navbar-dark bg-none">
@@ -13,16 +14,18 @@ class NavBar extends React.Component {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Currency converter</a>
+                  <NavLink exact activeClassName='converter' to='/'>Currency Converter</NavLink>
+                    {/* <Link to="/">Currency Converter</Link> */}
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Exchange rates</a>
+                  <NavLink exact activeClassName='converter' to='/'>Exchange Rates</NavLink>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
       </header>
+    </Router>
     )
     }
 }

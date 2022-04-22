@@ -13,6 +13,14 @@ body{
 .nav-bar{
   background-color:black;
   padding-left: 1rem;
+ text-decoration:none !important;
+}
+
+.converter {
+  text-decoration: none !important;
+  margin:5px;
+  float:right;
+  color:white !important;
 }
 
 footer{

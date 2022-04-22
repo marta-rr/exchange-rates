@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import CurrencyRow from './CurrencyRow';
 import NavBar from "./NavBar"
+import Footer from "./Footer"
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest'
@@ -83,9 +84,7 @@ function App() {
           amount = {toAmount}
         />
       </div>
-      <footer>
-        <p>© 2022 Copyright Marta Ríos. All Rights Reserved. <span class= "footer-social-network">Github</span></p>
-      </footer>
+      <Footer />
       </>
   );
 }
