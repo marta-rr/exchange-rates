@@ -1,6 +1,12 @@
 import React from "react"
-import { BrowserRouter as Router, NavLink, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Link } from "react-router-dom";
 import './App.css'
+// import './ExchangeRates'
+
+const ExchangeRates = () => {
+  return <h2>Hello</h2>;
+}
+
 
 class NavBar extends React.Component {
     render() { return (
@@ -14,18 +20,20 @@ class NavBar extends React.Component {
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <NavLink exact activeClassName='converter' to='/'>Currency Converter</NavLink>
+                  {/* <NavLink exact activeClassName='converter' to='/'>Currency Converter</NavLink> */}
                     {/* <Link to="/">Currency Converter</Link> */}
                 </li>
                 <li class="nav-item">
-                  <NavLink exact activeClassName='converter' to='/'>Exchange Rates</NavLink>
+                  {/* <NavLink exact activeClassName='converter' to='./ExchangeRates'>Exchange Rates</NavLink> */}
+                  <Link to={"/ExchangeRates"}>Exchange Rates</Link>
                 </li>
               </ul>
             </div>
           </nav>
+           <Route path="/ExchangeRates" component={ExchangeRates} />
         </div>
       </header>
-    </Router>
+     </Router>
     )
     }
 }
