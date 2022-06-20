@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import CurrencyRow from './CurrencyRow';
 import NavBar from "./NavBar"
 import Footer from "./Footer"
+import ExchangeRates from "./ExchangeRates";
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest'
@@ -67,7 +67,6 @@ function App() {
   //Display on DOM
   return (
       <>
-      <NavBar />
       <div id= "currency-converter">
         <h1>Currency converter</h1>
         <CurrencyRow currencyOptions = {currencyOptions}
