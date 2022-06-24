@@ -1,4 +1,4 @@
- html, body{
+html, body{
   margin:0;
   padding:0;
   font-family:Georgia;
@@ -52,7 +52,7 @@
   bottom:0;
   height: 30px;
   margin-left: 1rem;
-  margin-top:30px;
+  margin-top:20px;
 }
 
 .footer-social-network{
@@ -61,9 +61,7 @@
 }
 
 h1{
-  margin:0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-bottom:20px;
 }
 
 .input{
@@ -86,12 +84,30 @@ select{
   justify-content:center;
   align-items: center;
   text-align: center;
-  min-height:150px;
   margin:20px;
+  padding-bottom:20px;
+  background: linear-gradient(to top,
+  white 30%,
+  white 25%,
+  gray 90%,
+  gray 100%);
 }
 
 .columns-rates{
   justify-content:center;
   align-items: center;
   text-align: center;
+}
+
+.container-fluid{
+  margin-top:40px;
+  background: linear-gradient(to bottom,
+  white 30%,
+  white 25%,
+  gray 90%,
+  gray 100%);
+  width: 60vw;
+  height: 40vw;
+  border-radius:7%;
+  height:100%;
 }

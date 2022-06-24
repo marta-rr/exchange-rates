@@ -65,22 +65,24 @@ function App() {
   //Display on DOM
   return (
       <>
-      <div id= "currency-converter">
-        <h1>Currency converter</h1>
-        <CurrencyRow currencyOptions = {currencyOptions}
-          selectedCurrency = {fromCurrency}
-          onChangeCurrency = {e => setFromCurrency(e.target.value)}
-          onChangeAmount = {handleFromAmountChange}
-          amount = {fromAmount}
-        />
-        <div className = "equals">=</div>
-        <CurrencyRow currencyOptions = {currencyOptions}
-          selectedCurrency = {toCurrency}
-          onChangeCurrency = {e => setToCurrency(e.target.value)}
-          onChangeAmount = {handleToAmountChange}
-          amount = {toAmount}
-        />
-      </div>
+      <div className='container-fluid'>
+        <div id= "currency-converter">
+          <h1>Currency converter</h1>
+          <CurrencyRow currencyOptions = {currencyOptions}
+            selectedCurrency = {fromCurrency}
+            onChangeCurrency = {e => setFromCurrency(e.target.value)}
+            onChangeAmount = {handleFromAmountChange}
+            amount = {fromAmount}
+          />
+          <div className = "equals">=</div>
+          <CurrencyRow currencyOptions = {currencyOptions}
+            selectedCurrency = {toCurrency}
+            onChangeCurrency = {e => setToCurrency(e.target.value)}
+            onChangeAmount = {handleToAmountChange}
+            amount = {toAmount}
+          />
+        </div>
+        </div>
       <Footer />
       </>
   );
