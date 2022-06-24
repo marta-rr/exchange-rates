@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import Footer2 from './Footer2';
 
 function ExchangeRates() {
 
@@ -25,30 +26,39 @@ function ExchangeRates() {
 
 
   return (
+    <>
     <div className='ExchangeRates'>
+      <div className='flexContainer'>
+      <h1>Exchange Rates</h1>
       <select className='custom-select'
       value = {base}
       onChange={(e) => {
         const value = e.target.value;
         setBase(value);
         getRates(value);
-        console.log(value)
       }}>
-        <option defaultValue>{base}</option>
+        <option defaultValue>Exchange rates for 1 {base}</option>
           {ratesList.map((d) => (
             <option value={d.symbol} key={d.symbol}>
               {d.symbol}
             </option>
           ))}
       </select>
-      <ul className='list-group'>
+      </div>
+      <div className='container'>
         {ratesList.map((d) => (
+          <div className='row'>
+            <div className='col-12 col-sm-6 col-xl-4 mx-auto columns-rates'>
         <li className= 'list-group-item' key={d.symbol}>
            {d.symbol} - {d.rate}
          </li>
+         </div>
+         </div>
         ))}
-      </ul>
+      </div>
     </div>
+     <Footer2 />
+    </>
   );
 }
 

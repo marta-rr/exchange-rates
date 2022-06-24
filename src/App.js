@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import CurrencyRow from './CurrencyRow';
-import NavBar from "./NavBar"
 import Footer from './Footer';
-import ExchangeRates from './ExchangeRates';
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest';
