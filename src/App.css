@@ -1,6 +1,6 @@
 body{
   margin:0;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-family:Georgia;
   background: linear-gradient(to top,
   white 30%,
@@ -25,7 +25,6 @@ body{
 
 
 .links{
-  box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.2);
   color:white;
   padding:20px;
   font-family:Georgia, Times, 'Times New Roman', serif;
@@ -35,7 +34,6 @@ body{
 
 .links:hover{
   color: rgb(183, 178, 178);
-
 }
 
 #currency-converter{
@@ -50,12 +48,12 @@ body{
 }
 
 footer{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 30px;
-    margin-left: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  margin-left: 1rem;
 }
 
 .footer-social-network{
