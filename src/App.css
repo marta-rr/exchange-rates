@@ -22,6 +22,7 @@ html, body{
   padding-left: 1rem;
   text-decoration:none;
   padding:10px;
+
 }
 
 .links{
@@ -40,19 +41,17 @@ html, body{
   left:0;
   right:0;
   bottom:0;
-  height: 30px;
   margin-left: 1rem;
-  margin-top:30px;
 }
 
-.footer-exchange{
+.footer-exchange {
   position:relative;
   left:0;
   right:0;
   bottom:0;
-  height: 30px;
+  height: 40px;
   margin-left: 1rem;
-  margin-top:20px;
+  margin-top:30px;
 }
 
 .footer-social-network{
@@ -110,4 +109,16 @@ select{
   height: 40vw;
   border-radius:7%;
   height:100%;
+}
+
+#github{
+  color:black;
+  text-decoration: none;
+  padding-bottom:5px;
+  margin-bottom:5px;
+}
+
+.api-data{
+  background:red;
+
 }

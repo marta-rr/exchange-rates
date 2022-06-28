@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import CurrencyRow from './CurrencyRow';
-import Footer from './Footer';
+import FooterConverter from './FooterConverter';
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest';
@@ -83,7 +83,7 @@ function App() {
           />
         </div>
         </div>
-      <Footer />
+      <FooterConverter />
       </>
   );
 }
