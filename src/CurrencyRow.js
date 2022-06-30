@@ -15,7 +15,7 @@ export default function CurrencyRow(props) {
             className = "input"
             value={amount}
             onChange = {onChangeAmount} />
-            <select value = {selectedCurrency} onChange = {onChangeCurrency}>
+            <select value = {selectedCurrency} onChange = {onChangeCurrency} className='select-currency'>
                 {currencyOptions.map (option => (
                 <option key={option} value={option}>{option}</option>
                 ))}

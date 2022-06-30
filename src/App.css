@@ -8,6 +8,7 @@ html, body{
   white 25%,
   gray 90%,
   gray 100%);
+  color:black;
 }
 
 .body-exchange{
@@ -54,6 +55,7 @@ html, body{
   right:0;
   bottom:0;
   margin-left: 1rem;
+  font-size:14px;
 }
 
 .footer-exchange {
@@ -64,16 +66,34 @@ html, body{
   height: 40px;
   margin-left: 1rem;
   margin-top:30px;
+  font-size:14px;
 }
 
-@media only screen and(max-width:576px){
+.input{
+  border: 1px solid black;
+  border-radius: .3em;
+  padding: .25rem;
+  width:6em;
+}
+
+@media only screen and (max-width:576px){
   .footer-exchange {
-    font-size:2px;
+    font-size: 10px;
+    margin-bottom:0;
   }
-  .footer-converter{
-    font-size:2px;
+  .footer-converter {
+    font-size:10px;
+    margin-bottom:0;
+  }
+  .input{
+    width: 4rem;
+  }
+  .select-currency{
+    width:3.5rem;
+    font-size: 14px;
   }
 }
+
 
 .footer-social-network{
   float:right;
@@ -82,13 +102,6 @@ html, body{
 
 h1{
   padding-bottom:20px;
-}
-
-.input{
-  border: 1px solid black;
-  border-radius: .3em;
-  padding: .25rem;
-  width: 7em;
 }
 
 select{
