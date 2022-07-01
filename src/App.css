@@ -59,7 +59,7 @@ html, body{
   gray 100%);
   width: 60vw;
   height: 40vw;
-  border-radius:7%;
+  border-radius:3%;
   height:100%;
 }
 
@@ -166,7 +166,6 @@ select{
 
 @media only screen and (min-width:1200px){
   .container-fluid{
-    width: 30vw;
-    height: 18vw;
+    width: 40vw;
   }
 }
