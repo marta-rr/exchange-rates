@@ -23,11 +23,12 @@ html, body{
   gray 100%);
 }
 
-#currency-converter{
-  justify-content:center;
-  align-items: center;
-  text-align: center;
-  padding:50px;
+/* Nav Bar */
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+  font-size: 14px;
+  margin-top:10px;
+  height:auto;
 }
 
 .nav-bar{
@@ -35,7 +36,6 @@ html, body{
   padding-left: 1rem;
   text-decoration:none;
   padding:10px;
-
 }
 
 .links{
@@ -49,24 +49,25 @@ html, body{
   color: rgb(183, 178, 178);
 }
 
-.footer-converter{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  margin-left: 1rem;
-  font-size:14px;
+/* Home page/Currency Converter */
+.container-fluid{
+  margin-top:40px;
+  background: linear-gradient(to bottom,
+  white 30%,
+  white 25%,
+  gray 90%,
+  gray 100%);
+  width: 60vw;
+  height: 40vw;
+  border-radius:7%;
+  height:100%;
 }
 
-.footer-exchange {
-  position:relative;
-  left:0;
-  right:0;
-  bottom:0;
-  height: 40px;
-  margin-left: 1rem;
-  margin-top:30px;
-  font-size:14px;
+#currency-converter{
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  padding:50px;
 }
 
 .input{
@@ -74,30 +75,6 @@ html, body{
   border-radius: .3em;
   padding: .25rem;
   width:6em;
-}
-
-@media only screen and (max-width:576px){
-  .footer-exchange {
-    font-size: 10px;
-    margin-bottom:0;
-  }
-  .footer-converter {
-    font-size:10px;
-    margin-bottom:0;
-  }
-  .input{
-    width: 4rem;
-  }
-  .select-currency{
-    width:3.5rem;
-    font-size: 14px;
-  }
-}
-
-
-.footer-social-network{
-  float:right;
-  margin-right: 1rem;
 }
 
 h1{
@@ -113,6 +90,7 @@ select{
   font-size: 3rem;
 }
 
+/* Exchange Rates Page */
 .flexContainer{
   justify-content:center;
   align-items: center;
@@ -132,22 +110,63 @@ select{
   text-align: center;
 }
 
-.container-fluid{
-  margin-top:40px;
-  background: linear-gradient(to bottom,
-  white 30%,
-  white 25%,
-  gray 90%,
-  gray 100%);
-  width: 60vw;
-  height: 40vw;
-  border-radius:7%;
-  height:100%;
-}
-
+/* Footer */
 #github{
   color:black;
   text-decoration: none;
   padding-bottom:5px;
   margin-bottom:5px;
+}
+
+.footer-converter{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  margin-left: 1rem;
+  font-size:14px;
+  background: white 30%;
+}
+
+.footer-exchange {
+  position:relative;
+  left:0;
+  right:0;
+  bottom:0;
+  height: 40px;
+  margin-left: 1rem;
+  margin-top:30px;
+  font-size:14px;
+  background: white 30%;
+}
+
+.footer-social-network{
+  float:right;
+  margin-right: 1rem;
+}
+
+/* Adapted to phones screens*/
+@media only screen and (max-width:576px){
+  .footer-exchange {
+    font-size: 10px;
+    margin-bottom:0;
+  }
+  .footer-converter {
+    font-size:10px;
+    margin-bottom:0;
+  }
+  .input{
+    width: 4rem;
+  }
+  .select-currency{
+    width:3.5rem;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width:1200px){
+  .container-fluid{
+    width: 30vw;
+    height: 18vw;
+  }
 }

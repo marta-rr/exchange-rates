@@ -57,7 +57,7 @@ function ExchangeRates() {
           </div>
         </div>
         <FooterExchange />
-        </section>
+      </section>
     </>
   );
 }
