@@ -1,11 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import CurrencyRow from './CurrencyRow';
 import FooterConverter from './FooterConverter';
+import Chart from 'chart.js';
+
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest';
 
 function App() {
+
+  const buildChart = (labels, data, label) => {
+
+    const myChart  = new Chart(document.getElementById('myChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: label,
+            data,
+            fill: false,
+            tension: 0,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+      }
+    })
+  }
+
+  const getHistoricalRates = (base, quote) => {
+    const endDate = new Date().toISOString().split('T')[0];
+    const startDate = new Date((new Date).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+    fetch(`https://altexchangerateapi.herokuapp.com/${startDate}..${endDate}?from=${base}&to=${quote}`)
+      .then((response) => response.json())
+      .then(data => {
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        const chartLabels = Object.keys(data.rates);
+        const chartData = Object.values(data.rates).map(rate => rate[quote]);
+        const chartLabel = `${base}/${quote}`;
+        buildChart(chartLabels, chartData, chartLabel);
+      })
+      .catch(error => console.error(error.message));
+  }
 
   const [currencyOptions, setCurrencyOptions] = useState([])
   const [fromCurrency, setFromCurrency] = useState()
@@ -13,7 +53,6 @@ function App() {
   const [exchangeRate, setExchangeRate] = useState(1)
   const [amount, setAmount] =useState(1)
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
-
 
   //Calculate rates based on which box (upper or lower) is being modified
   let toAmount, fromAmount;
@@ -46,6 +85,7 @@ function App() {
       .then(data => {
         setExchangeRate(data.rates[toCurrency])
       })
+      getHistoricalRates(fromCurrency,toCurrency)
     }
   }, [fromCurrency, toCurrency])
 
@@ -81,6 +121,7 @@ function App() {
               amount = {toAmount}
           />
         </div>
+        <canvas id="myChart"></canvas>
       </div>
       <FooterConverter />
     </>
