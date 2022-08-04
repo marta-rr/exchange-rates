@@ -125,7 +125,8 @@ select{
   bottom:0;
   margin-left: 1rem;
   font-size:14px;
-  background: white 30%;
+  height:40px;
+  padding-top:10px;
 }
 
 .footer-exchange {
@@ -135,9 +136,8 @@ select{
   bottom:0;
   height: 40px;
   margin-left: 1rem;
-  margin-top:30px;
+  margin-top:40px;
   font-size:14px;
-  background: white 30%;
 }
 
 .footer-social-network{
@@ -168,4 +168,8 @@ select{
   .container-fluid{
     width: 40vw;
   }
+}
+
+#myChart{
+  padding:30px;
 }
