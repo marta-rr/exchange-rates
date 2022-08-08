@@ -6,31 +6,12 @@ import Chart from 'chart.js';
 
 //Get API
 const API_URL = 'https://altexchangerateapi.herokuapp.com/latest';
+let myChart = undefined;
 
 function App() {
 
-  const buildChart = (labels, data, label) => {
-
-    const myChart  = new Chart(document.getElementById('myChart').getContext('2d'), {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [
-          {
-            label: label,
-            data,
-            fill: false,
-            tension: 0,
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-      }
-    })
-  }
-
   const getHistoricalRates = (base, quote) => {
+    console.log('I am being called')
     const endDate = new Date().toISOString().split('T')[0];
     const startDate = new Date((new Date).getTime() - (30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
     fetch(`https://altexchangerateapi.herokuapp.com/${startDate}..${endDate}?from=${base}&to=${quote}`)
@@ -45,6 +26,32 @@ function App() {
         buildChart(chartLabels, chartData, chartLabel);
       })
       .catch(error => console.error(error.message));
+  }
+
+  const buildChart = (labels, data, label) => {
+
+  if (typeof myChart !== "undefined") {
+    myChart.destroy();
+  }
+
+  myChart  = new Chart(document.getElementById('myChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: label,
+            data,
+            fill: true,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+      }
+    })
   }
 
   const [currencyOptions, setCurrencyOptions] = useState([])
@@ -84,8 +91,8 @@ function App() {
       .then(res => res.json())
       .then(data => {
         setExchangeRate(data.rates[toCurrency])
+        getHistoricalRates(fromCurrency,toCurrency)
       })
-      getHistoricalRates(fromCurrency,toCurrency)
     }
   }, [fromCurrency, toCurrency])
 

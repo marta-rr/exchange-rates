@@ -53,10 +53,9 @@ html, body{
 .container-fluid{
   margin-top:40px;
   background: linear-gradient(to bottom,
-  white 30%,
-  white 25%,
-  gray 90%,
-  gray 100%);
+  black 5%,
+  white 70%,
+  white 100%);
   width: 60vw;
   height: 40vw;
   border-radius:3%;
@@ -68,6 +67,7 @@ html, body{
   align-items: center;
   text-align: center;
   padding:50px;
+  color:white;
 }
 
 .input{
@@ -108,6 +108,7 @@ select{
   justify-content:center;
   align-items: center;
   text-align: center;
+  background: black;
 }
 
 /* Footer */
